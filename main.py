@@ -131,10 +131,10 @@ while(cap.isOpened()):          # untill all frames are read
             centroid = (int(moments['m10']/moments['m00'])-3, int(moments['m01']/moments['m00'])+3)
             if park['id'] in errorcolor:
                 cv2.drawContours(frame_out, [points], contourIdx=-1, color=(128,0,128), thickness=3, lineType=cv2.LINE_8)
-                cv2.putText(frame_out, str(park['id']), (centroid[0]-10, centroid[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (128,0,128), 2, cv2.LINE_AA)
+                cv2.putText(frame_out, str(park['id']), (centroid[0]-10, centroid[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (128,0,128), 2, cv2.LINE_AA)
             else:
                 cv2.drawContours(frame_out, [points], contourIdx=-1, color=color, thickness=1, lineType=cv2.LINE_8)
-                cv2.putText(frame_out, str(park['id']), (centroid[0]-10, centroid[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+                cv2.putText(frame_out, str(park['id']), (centroid[0]-10, centroid[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1, cv2.LINE_AA)
 
                                     
     #-----------------------------------------------------------------------------------------------------------------
